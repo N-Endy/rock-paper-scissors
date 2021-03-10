@@ -3,15 +3,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     
 
     <script>
         function computerPlay() {
-            let choice = ['Rock', 'Paper', 'Scissors'];
-            return choice[Math.floor(Math.random() * choice.length)];
+            // Store string of choices in array
+            let compChoice = ['Rock', 'Paper', 'Scissors'];
+            // Multiply the length of choice array with a random number between 0 and 1
+            // Round off number by flooring, then take the number and pulling out a variable in the choices array
+            return compChoice[Math.floor(Math.random() * compChoice.length)];
+        }
+
+        function playerPlay() {
+            // Ask for player's choice and convert to lowercase
+            let playerChoice = prompt('What is your Choice?', '').toLowerCase();
+            // Convert player's choice to capitalization
+            return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1); 
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            // Compare player and computer choices
+            // If computer is rock and player is paper, player wins
+            // If computer is rock and player is scissors, computer wins
+            // If computer is rock and player is rock, it's a draw
+            // If computer is paper and player is rock, computer wins
+            // If computer is paper and player is scissors, player wins
+            // If computer is paper and player is paper, it's a draw
+            // If computer is scissors and player is rock, player wins
+            // If computer is scissors and player is paper, computer wins
+            // If computer is scissors and player is scissors, it's a draw
         }
     </script>
 </body>
