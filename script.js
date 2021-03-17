@@ -58,3 +58,16 @@ function playRound(playerSelection = playerPlay(), computerSelection = computerP
     }
 }
 playRound();
+
+function game() {
+    // Initialize player and Computer scores
+    let playerScore = 0;
+    let computerScore = 0;
+
+    // Declare Winner
+    if (playerScore > computerScore) {
+        alert(`You won ${playerScore} out of 5. You win the game!`);
+    } else {
+        alert(`Computer won ${computerScore} out of 5. You lose the game!`);
+    }
+}
