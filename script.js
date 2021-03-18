@@ -82,12 +82,11 @@ function game() {
                     Player: ${playerScore}  Draw: ${draw}  Computer: ${computerScore}`);
         }
     }
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
+    
 
+    for (let i=0; i<5; i++) {
+        playRound();
+    }
 
 
     // Declare Winner
