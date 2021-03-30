@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
+.header {
+    margin: 2rem;
+    text-align: center;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+    font-size: 40px;
+}
+
+div > p > span {
+    font-size: 20px;
+}
+
+.player-score,
+.computer-score {
+    padding: 1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 7rem;
+    color: #fff;
+    border: 1px solid #222;
+}
+
+.option:hover {
+    border: 1px solid #fff;
+}

@@ -1,8 +1,8 @@
 
 function game() {
     // Initialize player and Computer scores
-    let playerScore = 0;
-    let computerScore = 0;
+    let playerScore = document.querySelector('.player-score');
+    let computerScore = document.querySelector('.computer-score');
     let draw = 0;
 
     function computerPlay() {
@@ -81,11 +81,6 @@ function game() {
             alert(`It's a draw! You both chose Scissors
                     Player: ${playerScore}  Draw: ${draw}  Computer: ${computerScore}`);
         }
-    }
-    
-
-    for (let i=0; i<5; i++) {
-        playRound();
     }
 
 
