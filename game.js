@@ -14,67 +14,93 @@ function game() {
         // Cache all options, then multiply the node lenght by random and use in accessing nodeList
         computerChoice = options[Math.floor(Math.random() * options.length)];
         return computerChoice.className;
-        console.log(computerChoice);
     }
     
     function playerPlay() {
         options.forEach(option => {
             option.addEventListener('click', () => {
                 computerPlay()
+                choice = option.classList;
                 playerChoice = option.className;
-                playRound(playerChoice);
+                playRound(playerChoice, choice);
             })
         });
     }
     
     
-    function playRound(player) {
+    function playRound(player, color) {
         let computer = computerPlay();
         // Compare player and computer choices
         // If computer is rock and player is paper, player wins
-        console.log(computer);
         if (computer === rock && player === paper) {
-            console.log("You win!")
             playerScore++;
             scorePlayer.textContent = playerScore;
             winUpdate.textContent = 'Paper covers Rock. You win this round!';
+            color.add('green-color');
+            setTimeout(() => color.remove('green-color'), 1000);
         } else if (computer === rock && player === scissors) {
             // If computer is rock and player is scissors, computer wins
             computerScore++;
             scoreComputer.textContent = computerScore;
             winUpdate.textContent = 'Rock breaks Scissors. You lose this round!';
-        } else if (computer === 'Rock' && player === 'Rock') {
+            color.add('red-color');
+            setTimeout(() => color.remove('red-color'), 1000);
+        } else if (computer === rock && player === rock) {
             // If computer is rock and player is rock, it's a draw
             winUpdate.textContent = 'You both chose Rock. Play again!';
+            color.add('grey-color');
+            setTimeout(() => color.remove('grey-color'), 1000);
         } else if (computer === paper && player === rock) {
             // If computer is paper and player is rock, computer wins
             computerScore++;
             scoreComputer.textContent = computerScore;
             winUpdate.textContent = 'Paper covers Rock. You lose this round!';
+            color.add('red-color');
+            setTimeout(() => color.remove('red-color'), 1000);
         } else if (computer === paper && player === scissors) {
             // If computer is paper and player is scissors, player wins
             playerScore++;
             scorePlayer.textContent = playerScore;
             winUpdate.textContent = 'Scissors cuts Paper. You win this round!';
+            color.add('green-color');
+            setTimeout(() => color.remove('green-color'), 1000);
         } else if (computer === paper && player === paper) {
             // If computer is paper and player is paper, it's a draw
             winUpdate.textContent = "Same hand. It's a draw. Play again!";
+            color.add('grey-color');
+            setTimeout(() => color.remove('grey-color'), 1000);
         } else if (computer === scissors && player === rock) {
             // If computer is scissors and player is rock, player wins
             playerScore++;
             scorePlayer.textContent = playerScore;
-            winUpdate.textContent = 'Rock breaks Scissors. win this round!';
+            winUpdate.textContent = 'Rock breaks Scissors. You win this round!';
+            color.add('green-color');
+            setTimeout(() => color.remove('green-color'), 1000);
         } else if (computer === scissors && player === paper) {
             // If computer is scissors and player is paper, computer wins
             computerScore++;
             scoreComputer.textContent = computerScore;
             winUpdate.textContent = 'Scissors cuts Paper. You lose this round!';
+            color.add('red-color');
+            setTimeout(() => color.remove('red-color'), 1000);
         } else if (computer === scissors && player === scissors) {
             // If computer is scissors and player is scissors, it's a draw
             winUpdate.textContent = 'This loooks like a draw. Play again!';
+            color.add('grey-color');
+            setTimeout(() => color.remove('grey-color'), 1000);
         }
+
+        // if (playerScore > 4) {
+        //     winUpdate.textContent = 'You win!';
+        //     return;
+        // }
     }
-    playerPlay();
+    playerPlay()
+
+    function checkWinner() {
+        setTimeout(() => color.remove('green-color'), 1000);
+    }
+    
     
 }
 game();

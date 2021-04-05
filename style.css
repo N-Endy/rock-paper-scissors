@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     line-height: 1.4;
+    overflow: hidden;
 }
 
 #container {
@@ -47,11 +48,38 @@
 .option {
     margin: 2rem;
     padding: 1rem;
-    font-size: 7rem;
+    font-size: 50px;
     color: #fff;
-    border: 1px solid #222;
+    border: 2px solid #aaa;
 }
 
 .option:hover {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
+}
+
+.green-color {
+    border: rgb(14, 138, 14);
+    box-shadow: 0 0 10px rgb(4, 87, 4);
+}
+
+.red-color {
+    border: rgb(223, 37, 24);
+    box-shadow: 0 0 10px rgb(133, 8, 8);
+}
+
+.grey-color {
+    border: rgb(92, 88, 88);
+    box-shadow: 0 0 10px rgb(73, 71, 71);
+}
+
+@media all and (max-width: 400px) {
+    .option {
+        font-size: 25px;
+    }
+}
+
+@media all and (max-width: 280px) {
+    .option {
+        font-size: 17px;
+    }
 }
