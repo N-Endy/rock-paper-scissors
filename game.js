@@ -5,10 +5,11 @@ function game() {
     let scorePlayer = document.querySelector('.player-score');
     let scoreComputer = document.querySelector('.computer-score');
     let options = document.querySelectorAll('.option');
+    let winUpdate = document.querySelector('.win-update');
+    let btn = document.querySelector('.btn');
     let rock = 'rock option';
     let paper = 'paper option';
     let scissors = 'scissors option';
-    let winUpdate = document.querySelector('.win-update');
 
     function computerPlay() {
         // Cache all options, then multiply the node lenght by random and use in accessing nodeList
@@ -26,6 +27,7 @@ function game() {
             })
         });
     }
+    playerPlay();
     
     
     function playRound(player, color) {
@@ -88,19 +90,32 @@ function game() {
             winUpdate.textContent = 'This loooks like a draw. Play again!';
             color.add('grey-color');
             setTimeout(() => color.remove('grey-color'), 1000);
+        } else {
+            
         }
 
-        // if (playerScore > 4) {
-        //     winUpdate.textContent = 'You win!';
-        //     return;
-        // }
-    }
-    playerPlay()
-
-    function checkWinner() {
-        setTimeout(() => color.remove('green-color'), 1000);
+        if (playerScore > 4) {
+            winUpdate.textContent = 'Congratulations! You Won!';
+            disableOption();
+        } else if (computerScore > 4) {
+            winUpdate.textContent = 'Awwww! You Lost!';
+            disableOption();
+        }
     }
     
+
+    function disableOption() {
+        document.querySelector('#container > p').style.display = 'none';
+        document.querySelector('.options').style.display = 'none';
+        startGameAgain();
+    }
+    
+    function startGameAgain() {
+        btn.style.display = 'flex';
+        btn.addEventListener('click', () => {
+            document.location.reload();
+        })
+    }
     
 }
 game();

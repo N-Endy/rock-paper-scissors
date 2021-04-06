@@ -57,6 +57,20 @@
     border: 2px solid #fff;
 }
 
+.btn {
+    display: none;
+    padding: 1rem 2rem;
+    background: grey;
+    color: #fff;
+    border-radius: 0.75rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #111;
+    color: grey;
+}
+
 .green-color {
     border: rgb(14, 138, 14);
     box-shadow: 0 0 10px rgb(4, 87, 4);
